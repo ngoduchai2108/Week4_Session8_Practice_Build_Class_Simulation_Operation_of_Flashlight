@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Build Class Simulation</title>
+</head>
+<body>
+<script>
+    let Battery = function () {
+        this.setEnerry = function (enerry) {
+            this.enerry = enerry;
+        };
+        this.getEnerry = function () {
+            return this.enerry;
+        };
+        // this.decreaseEnerry = function () {
+        //     if (enerry > 0){
+        //         this.enerry--;
+        //     }
+        // }
+    };
+
+    let FlashLamp = function () {
+        this.setBattery = function (battery) {
+            this.battery = battery;
+        };
+        // this.getBatteryInfo = function () {
+        //     return this.battery.getEnerry ;
+        // };
+        this.turnOn = function () {
+            this.status = true;
+        };
+        this.turnOff = function () {
+            this.status = false;
+        };
+        this.light = function () {
+            if (this.status ){
+                alert('Lighting')
+            } else {
+                alert('Not Lighting')
+            }
+        }
+    };
+
+    let battery = new Battery();
+    battery.setEnerry(10);
+
+    let flashlamp = new FlashLamp();
+    flashlamp.setBattery(battery);
+
+    document.write('Battery info: '+flashlamp.battery.getEnerry() + '<br/>');
+    flashlamp.light();
+
+    document.write('Turn On<br/>');
+    flashlamp.turnOn();
+    flashlamp.light();
+    document.write('Battery info: '+flashlamp.battery.getEnerry() + '<br/>');
+
+    document.write('Turn Off<br/>');
+    flashlamp.turnOff();
+    flashlamp.light();
+
+</script>
+</body>
+</html>
